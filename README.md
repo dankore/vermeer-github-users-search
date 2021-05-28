@@ -4,10 +4,6 @@
 
 3.3 hours
 
-## Adding GUI for demonstration purposes
-
-3 hours
-
 ## Live URL
 
 You can view the project live at: [Vermeer Github Users Search](https://vermeer-github-users-search.dankore.com).
@@ -15,7 +11,8 @@ You can view the project live at: [Vermeer Github Users Search](https://vermeer-
 ## Tech Stacks
 
 - ⚡ Next.js — A modern React Framework
-
+- 🔗 TypeScript - Typed for safety
+- 💎 Docker - Containerized for scalability
 - 🔥 next-seo — For managing SEO
 - 💡 TailwindCSS — For styling
 - 📏 ESLint — Pluggable JavaScript linter
