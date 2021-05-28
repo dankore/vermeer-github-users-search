@@ -3,8 +3,7 @@
 
 const title = 'Vermeer Github Users Search';
 const description = `The goal of this exercise is to create a web app that re-implements a portion of GitHub's Search
-feature, the user search, using their public API. Please share a working deployed version of the
-exercise as well as the GitHub repo.`;
+feature, the user search, using their public API.`;
 const imageUrl = 'https://res.cloudinary.com/dankoresoftware/image/upload/v1618799691/sample.jpg';
 
 const SEO = {
