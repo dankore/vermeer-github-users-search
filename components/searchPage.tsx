@@ -75,7 +75,7 @@ export default function SearchPage(): JSX.Element {
                     type="search"
                     isLoading={usersSearchResults.isLoading}
                 />
-                <p className="pl-4 text-sm text-gray-500 mt-4">
+                <p className="pl-4 text-sm text-gray-700 dark:text-gray-300 mt-4">
                     <span className="text-red-600">*</span>
                     API limit: Limited to 100 results per search. 10 searches per minute.
                 </p>
