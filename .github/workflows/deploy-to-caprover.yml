@@ -1,0 +1,39 @@
+name: Deploy to Caprover
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+ # Publishes a docker image of the server app, and deploys it Caprover.
+  caprover-deploy:
+    runs-on: ubuntu-latest
+    container: node:14
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Push Docker image to GitHub Packages
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: dankore/vermeer-github-uer-search/vermeer-github-uer-search
+          tag_with_ref: true
+      - name: Deploy to Caprover Using GitHub Actions
+        uses: dankore/github-to-caprover@v.1.0.6
+        with:
+          server: "${{ secrets.CAPROVER_URL }}"
+          password: "${{ secrets.CAPROVER_PASSWORD }}"
+          appName: "${{ secrets.CAPROVER_APP }}"
+          image: docker.pkg.github.com/dankore/vermeer-github-uer-search
+      - name: get-npm-version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@master    
+      - name: Release
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with: 
+           repo_token: "${{ secrets.GITHUB_TOKEN }}"
+           automatic_release_tag: "Latest"
+           draft: false
+           prerelease: false
+           title: ${{ steps.package-version.outputs.current-version}}

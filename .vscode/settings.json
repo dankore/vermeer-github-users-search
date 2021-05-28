@@ -1,0 +1,7 @@
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "typescript.format.insertSpaceAfterTypeAssertion": true,
+  "files.autoSave": "afterDelay",
+  "editor.fontSize": 15
+}

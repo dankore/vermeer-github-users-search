@@ -1,41 +1,40 @@
-# TypeScript Next.js example
+# Vermeer Github Users Search
 
-This is a really simple project that shows the usage of Next.js with TypeScript.
+## Working solution
 
-## Deploy your own
+3.3 hours
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+## Adding GUI for demonstration purposes
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript&project-name=with-typescript&repository-name=with-typescript)
+3 hours
 
-## How to use it?
+## Live URL
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+You can view the project live at: [Vermeer Github Users Search](https://vermeer-github-users-search.dankore.com).
 
-```bash
-npx create-next-app --example with-typescript with-typescript-app
-# or
-yarn create next-app --example with-typescript with-typescript-app
-```
+## Tech Stacks
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+- ⚡ Next.js — A modern React Framework
 
-## Notes
+- 🔥 next-seo — For managing SEO
+- 💡 TailwindCSS — For styling
+- 📏 ESLint — Pluggable JavaScript linter
+- 💖 Prettier — Opinionated Code Formatter
+- 🐶 Husky — Use git hooks with ease
+- 🚫 lint-staged — Run linters against staged git files
+- 🗂 Absolute import — Import folders and files using the @ prefix
 
-This example shows how to integrate the TypeScript type system into Next.js. Since TypeScript is supported out of the box with Next.js, all we have to do is to install TypeScript.
+## Prerequisite software
 
-```
-npm install --save-dev typescript
-```
+- Visual Studio Code or any other IDE
+- [Node.js (8.x or above)](https://nodejs.org/en/download/)
 
-To enable TypeScript's features, we install the type declarations for React and Node.
+## Run this app on your computer
 
-```
-npm install --save-dev @types/react @types/react-dom @types/node
-```
+- Clone this repo into a folder of your choice on your computer.
+- Open the cloned repo in the IDE of your choice. I used Visual Studio Code.
+- Open the integrated terminal in VSCode (`ctrl + ~` or View -> Terminal).
 
-When we run `next dev` the next time, Next.js will start looking for any `.ts` or `.tsx` files in our project and builds it. It even automatically creates a `tsconfig.json` file for our project with the recommended settings.
-
-Next.js has built-in TypeScript declarations, so we'll get autocompletion for Next.js' modules straight away.
-
-A `type-check` script is also added to `package.json`, which runs TypeScript's `tsc` CLI in `noEmit` mode to run type-checking separately. You can then include this, for example, in your `test` scripts.
+- Type `yarn` in the terminal to install the packages required for this project.
+- Type `yarn dev` to start the development server.
+- View the live app in modern browsers at <http://localhost:3000>.
