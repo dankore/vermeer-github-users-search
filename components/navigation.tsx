@@ -15,26 +15,34 @@ export default function Navigation(): JSX.Element {
         <header className="dark:bg-gray-700 border-b dark:border-gray-600 dark:text-gray-100 flex-none relative z-50 text-sm leading-6 font-medium text-gray-800">
             <nav className="flex items-center justify-between py-5 px-3 max-w-4xl mx-auto">
                 <Link href="/">
-                    <a className="">
+                    <a>
                         <span className="sr-only">Vermeer Github Users Search</span>
                         Vermeer Github Users Search
                     </a>
                 </Link>
-                <button
-                    type="button"
-                    className="rounded-md border border-transparent focus:bg-gray-100 focus:outline-none dark:focus:bg-black dark:focus:border-gray-800 text-gray-400"
-                    onClick={switchTheme}
-                >
-                    <span className="sr-only">
-                        <span className="dark:hidden">Switch to dark theme</span>
-                        <span className="hidden dark:inline">Switch to light theme</span>
-                    </span>
-                    {isMounted && resolvedTheme == 'dark' ? (
-                        <SunIcon className={`w-9 h-9`} />
-                    ) : (
-                        <MoonIcon className={`w-9 h-9`} />
-                    )}
-                </button>
+                <div className="flex items-center justify-center">
+                    <Link href="/docs">
+                        <a>
+                            <span className="sr-only">Docs</span>
+                            Docs
+                        </a>
+                    </Link>
+                    <button
+                        type="button"
+                        className="ml-12 rounded-md border border-transparent focus:bg-gray-100 focus:outline-none dark:focus:bg-black dark:focus:border-gray-800 text-gray-400"
+                        onClick={switchTheme}
+                    >
+                        <span className="sr-only">
+                            <span className="dark:hidden">Switch to dark theme</span>
+                            <span className="hidden dark:inline">Switch to light theme</span>
+                        </span>
+                        {isMounted && resolvedTheme == 'dark' ? (
+                            <SunIcon className={`w-9 h-9`} />
+                        ) : (
+                            <MoonIcon className={`w-9 h-9`} />
+                        )}
+                    </button>
+                </div>
             </nav>
         </header>
     );

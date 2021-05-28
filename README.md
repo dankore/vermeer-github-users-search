@@ -10,9 +10,10 @@ You can view the project live at: [Vermeer Github Users Search](https://vermeer-
 
 ## Tech Stacks
 
-- ⚡ Next.js — A modern React Framework
+- ⚡ Next.js — A fast modern React Framework
 - 🔗 TypeScript — Typed for safety
 - 💎 Docker — Containerized for scalability
+- 🌥 Deployed to Caprover - Hosted on my own server
 - 🔥 next-seo — For managing SEO
 - 💡 TailwindCSS — For styling
 - 📏 ESLint — Pluggable JavaScript linter

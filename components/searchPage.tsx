@@ -96,7 +96,9 @@ export default function SearchPage(): JSX.Element {
 
                 {/* NO RESULTS TO DISPLAY */}
                 {!usersSearchResults.data.length && (
-                    <p className="lg:rounded-lg text-center mt-5">Nothing to see here</p>
+                    <p className="lg:rounded-lg text-center mt-5">
+                        No results. Start typing above.
+                    </p>
                 )}
             </div>
         </Layout>
