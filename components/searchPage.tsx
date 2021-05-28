@@ -4,6 +4,7 @@ import { InputText } from '@components/inputAndButton';
 import Layout from '@components/Layout';
 import { useImmer } from 'use-immer';
 import DisplaySearchResult from './displaySearchResult';
+import { SearchIcon } from '@heroicons/react/solid';
 
 export default function SearchPage(): JSX.Element {
     const [state, setState] = useState('');
@@ -59,19 +60,25 @@ export default function SearchPage(): JSX.Element {
 
     return (
         <Layout title="Home">
-            <div className="max-w-4xl mx-auto">
-                <h2 className="text-center text-3xl font-extrabold text-gray-900 dark:text-white">
-                    Search GitHub Users
-                </h2>
+            <div className="max-w-4xl mx-auto mt-10">
+                <div className="flex justify-center items-center">
+                    <SearchIcon className={`w-7 h-7 mr-2 text-gray-700 -mb-1`} />
+                    <h2 className="text-3xl font-extrabold text-gray-800 dark:text-white">
+                        Search GitHub Users
+                    </h2>
+                </div>
                 <InputText
-                    title="Type a GitHub username"
-                    showAsterick={true}
+                    title="Start typing to search"
                     value={state}
                     onChangeHandler={e => setState(e.target.value)}
                     id="login_email"
                     type="search"
                     isLoading={usersSearchResults.isLoading}
                 />
+                <p className="pl-4 text-sm text-gray-500 mt-4">
+                    <span className="text-red-600">*</span>
+                    API limit: Limited to 100 results per search. 10 searches per minute.
+                </p>
 
                 {usersSearchResults.data.length > 0 && (
                     <DisplaySearchResult

@@ -2,7 +2,6 @@ import React, { ChangeEvent } from 'react';
 
 interface IInputText {
     title: string;
-    showAsterick?: boolean;
     value: string;
     onChangeHandler: (e: ChangeEvent<HTMLInputElement>) => void;
     id: string;
@@ -13,7 +12,6 @@ interface IInputText {
 
 export function InputText({
     title,
-    showAsterick,
     value,
     onChangeHandler,
     id,
@@ -23,8 +21,8 @@ export function InputText({
 }: IInputText): JSX.Element {
     return (
         <div className="relative flex flex-col px-4 pt-4">
-            <label htmlFor={id} className="text-lg">
-                {title} {showAsterick && <span className="text-red-600">*</span>}
+            <label htmlFor={id} className="text-lg mb-3">
+                {title}
             </label>
             <div className="mt-1 flex rounded-md shadow-sm">
                 <span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
