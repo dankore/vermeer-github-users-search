@@ -18,6 +18,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           repository: dankore/vermeer-github-users-search/vermeer-github-users-search
+          tags: latest
       - name: Deploy to Caprover Using GitHub Actions
         uses: dankore/github-to-caprover@v.1.0.6
         with:
