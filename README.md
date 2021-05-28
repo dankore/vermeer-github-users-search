@@ -1,5 +1,11 @@
 # Vermeer Github Users Search
 
+<img src="https://res.cloudinary.com/dankoresoftware/image/upload/v1622227758/Others/seo/vermeer_seo_results.png" alt="se-results" width="100%"/>
+
+
+[![Deploy to Caprover](https://github.com/dankore/vermeer-github-users-search/actions/workflows/deploy-to-caprover.yml/badge.svg)](https://github.com/dankore/vermeer-github-users-search/actions/workflows/deploy-to-caprover.yml)
+[Source](https://lighthouse-dot-webdotdevsite.appspot.com//lh/html?url=https%3A%2F%2Fvermeer-github-users-search.dankore.com%2F)
+
 ## Working solution
 
 2.3 hours
