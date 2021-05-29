@@ -3,7 +3,7 @@ import ReactPaginate from 'react-paginate';
 import { InputText } from '@components/inputAndButton';
 import Layout from '@components/Layout';
 import { useImmer } from 'use-immer';
-import DisplaySearchResult from './displaySearchResult';
+import DisplaySearchResult2 from './displaySearchResult';
 import { SearchIcon } from '@heroicons/react/solid';
 
 export default function SearchPage(): JSX.Element {
@@ -80,33 +80,34 @@ export default function SearchPage(): JSX.Element {
                     API limit: Limited to 100 results per search. 10 searches per minute.
                 </p>
 
-                {usersSearchResults.data.length > 0 && (
-                    <DisplaySearchResult
-                        usersSearchResults={usersSearchResults}
-                        currentPageData={currentPageData}
-                    >
-                        <ReactPaginate
-                            previousLabel={'prev'}
-                            nextLabel={'next'}
-                            breakLabel={'...'}
-                            breakClassName={'break-me'}
-                            pageCount={usersSearchResults.pageCount}
-                            marginPagesDisplayed={1}
-                            pageRangeDisplayed={0}
-                            onPageChange={handlePageClick}
-                            containerClassName={'pagination'}
-                            subContainerClassName={'pages pagination'}
-                            activeClassName={'active'}
-                        />
-                    </DisplaySearchResult>
-                )}
-
-                {/* NO RESULTS TO DISPLAY */}
-                {!usersSearchResults.data.length && (
-                    <p className="lg:rounded-lg text-center mt-5">
-                        No results. Start typing above.
-                    </p>
-                )}
+                <div className="px-4 py-6">
+                    <div className="max-w-none mx-auto">
+                        <div className="bg-white overflow-hidden sm:rounded-lg">
+                            <ul className="divide-y divide-gray-200" aria-disabled="true">
+                                {usersSearchResults.data.length > 0 && (
+                                    <DisplaySearchResult2
+                                        usersSearchResults={usersSearchResults}
+                                        currentPageData={currentPageData}
+                                    >
+                                        <ReactPaginate
+                                            previousLabel={'prev'}
+                                            nextLabel={'next'}
+                                            breakLabel={'...'}
+                                            breakClassName={'break-me'}
+                                            pageCount={usersSearchResults.pageCount}
+                                            marginPagesDisplayed={1}
+                                            pageRangeDisplayed={0}
+                                            onPageChange={handlePageClick}
+                                            containerClassName={'pagination'}
+                                            subContainerClassName={'pages pagination'}
+                                            activeClassName={'active'}
+                                        />
+                                    </DisplaySearchResult2>
+                                )}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </Layout>
     );

@@ -48,7 +48,7 @@ const Layout = (props: IProps): JSX.Element => (
             <footer className="flex justify-center pt-3">
                 <span>
                     &copy; {new Date().getFullYear()}{' '}
-                    <a className="hover:text-indigo-600" href="https://dankore.com/">
+                    <a className="hover:text-indigo-600" href="https://github.com/dankore">
                         Adamu M. Dankore.
                     </a>
                 </span>

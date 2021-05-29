@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import LeanUserProfileCard from '@components/leanUserProfileCard';
+import List from './list';
 
 interface IDisplaySearchResultProps {
     usersSearchResults: {
@@ -20,13 +20,13 @@ export default function DisplaySearchResult({
 }: IDisplaySearchResultProps): JSX.Element {
     return (
         <>
-            <ul className="flex flex-wrap justify-center">
+            <>
                 {currentPageData.map(userData => {
-                    return <LeanUserProfileCard userData={userData} key={userData.id} />;
+                    return <List userData={userData} key={userData.id} />;
                 })}
-            </ul>
+            </>
             {usersSearchResults.data.length > usersSearchResults.perPage && (
-                <div className="bg-white px-4 py-3 rounded-md flex items-center justify-between sm:px-6 dark:bg-gray-700">
+                <div className="bg-white px-4 py-3 flex items-center justify-between sm:px-6 dark:bg-gray-700">
                     <div className="sm:flex-1 sm:flex items-center sm:justify-between">
                         <div>
                             <p className="text-sm text-gray-700 dark:text-gray-200">
