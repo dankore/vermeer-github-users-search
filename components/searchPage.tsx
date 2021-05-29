@@ -44,7 +44,6 @@ export default function SearchPage(): JSX.Element {
                 fetch(`https://api.github.com/search/users?q=${state}&per_page=100`)
                     .then(async res => {
                         const data = await res.json();
-                        console.log(res.status);
 
                         setUsersSearchResults(draft => {
                             if (res.status == 200) {
@@ -56,6 +55,7 @@ export default function SearchPage(): JSX.Element {
                             } else {
                                 draft.hasError = true;
                             }
+
                             // STOP LOADING
                             draft.isLoading = false;
                         });
