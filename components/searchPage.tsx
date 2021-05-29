@@ -3,7 +3,7 @@ import ReactPaginate from 'react-paginate';
 import { InputText } from '@components/inputAndButton';
 import Layout from '@components/Layout';
 import { useImmer } from 'use-immer';
-import DisplaySearchResult from './displaySearchResult';
+import DisplaySearchResult2 from './displaySearchResult';
 import { SearchIcon } from '@heroicons/react/solid';
 
 export default function SearchPage(): JSX.Element {
@@ -15,6 +15,7 @@ export default function SearchPage(): JSX.Element {
         perPage: 8,
         currentPage: 0,
         pageCount: 0,
+        hasError: false,
     });
 
     const currentPageData = usersSearchResults.data.slice(
@@ -45,10 +46,16 @@ export default function SearchPage(): JSX.Element {
                         const data = await res.json();
 
                         setUsersSearchResults(draft => {
-                            draft.data = data.items;
-                            draft.pageCount = Math.ceil(
-                                data.items.length / usersSearchResults.perPage
-                            );
+                            if (res.status == 200) {
+                                draft.hasError = false;
+                                draft.data = data.items;
+                                draft.pageCount = Math.ceil(
+                                    data.items.length / usersSearchResults.perPage
+                                );
+                            } else {
+                                draft.hasError = true;
+                            }
+
                             // STOP LOADING
                             draft.isLoading = false;
                         });
@@ -79,34 +86,40 @@ export default function SearchPage(): JSX.Element {
                     <span className="text-red-600">*</span>
                     API limit: Limited to 100 results per search. 10 searches per minute.
                 </p>
-
-                {usersSearchResults.data.length > 0 && (
-                    <DisplaySearchResult
-                        usersSearchResults={usersSearchResults}
-                        currentPageData={currentPageData}
-                    >
-                        <ReactPaginate
-                            previousLabel={'prev'}
-                            nextLabel={'next'}
-                            breakLabel={'...'}
-                            breakClassName={'break-me'}
-                            pageCount={usersSearchResults.pageCount}
-                            marginPagesDisplayed={1}
-                            pageRangeDisplayed={0}
-                            onPageChange={handlePageClick}
-                            containerClassName={'pagination'}
-                            subContainerClassName={'pages pagination'}
-                            activeClassName={'active'}
-                        />
-                    </DisplaySearchResult>
-                )}
-
-                {/* NO RESULTS TO DISPLAY */}
-                {!usersSearchResults.data.length && (
-                    <p className="lg:rounded-lg text-center mt-5">
-                        No results. Start typing above.
+                {usersSearchResults.hasError && (
+                    <p className="pl-5 text-sm text-red-700 dark:text-red-300 mt-4">
+                        WARNING! API rate limit exceed. Please wait another minute to search.
                     </p>
                 )}
+
+                <div className="px-4 py-6">
+                    <div className="max-w-none mx-auto">
+                        <div className="bg-white overflow-hidden sm:rounded-lg">
+                            <ul className="divide-y divide-gray-200" aria-disabled="true">
+                                {usersSearchResults.data.length > 0 && (
+                                    <DisplaySearchResult2
+                                        usersSearchResults={usersSearchResults}
+                                        currentPageData={currentPageData}
+                                    >
+                                        <ReactPaginate
+                                            previousLabel={'prev'}
+                                            nextLabel={'next'}
+                                            breakLabel={'...'}
+                                            breakClassName={'break-me'}
+                                            pageCount={usersSearchResults.pageCount}
+                                            marginPagesDisplayed={1}
+                                            pageRangeDisplayed={0}
+                                            onPageChange={handlePageClick}
+                                            containerClassName={'pagination'}
+                                            subContainerClassName={'pages pagination'}
+                                            activeClassName={'active'}
+                                        />
+                                    </DisplaySearchResult2>
+                                )}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </Layout>
     );

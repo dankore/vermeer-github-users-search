@@ -8,7 +8,7 @@
 
 ## Working solution
 
-2.3 hours
+3 hours
 
 ## Live URL
 

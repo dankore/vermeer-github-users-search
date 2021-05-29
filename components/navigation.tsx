@@ -15,14 +15,14 @@ export default function Navigation(): JSX.Element {
         <header className="dark:bg-gray-700 border-b dark:border-gray-600 dark:text-gray-100 flex-none relative z-50 text-sm leading-6 font-medium text-gray-800">
             <nav className="flex items-center justify-between py-5 px-3 max-w-4xl mx-auto">
                 <Link href="/">
-                    <a>
+                    <a className="font-sans font-medium py-1.5 px-4 rounded bg-white text-gray-600 border-gray-300 hover:bg-gray-100">
                         <span className="sr-only">Vermeer Github Users Search</span>
                         Vermeer Github Users Search
                     </a>
                 </Link>
                 <div className="flex items-center justify-center">
                     <Link href="/docs">
-                        <a>
+                        <a className="font-sans font-medium py-1.5 px-4 rounded bg-white text-gray-600 border-gray-300 hover:bg-gray-100">
                             <span className="sr-only">Docs</span>
                             Docs
                         </a>
